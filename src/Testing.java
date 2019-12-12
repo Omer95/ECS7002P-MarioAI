@@ -3,6 +3,7 @@ import engine.core.MarioGame;
 import engine.core.MarioResult;
 import levelGenerators.MarioLevelGenerator;
 import levelGenerators.groupS.LevelGeneratorCellAutomata;
+import levelGenerators.groupS.LevelGeneratorSearch;
 
 import static engine.helper.RunUtils.*;
 
@@ -12,6 +13,7 @@ public class Testing {
         boolean generateDifferentLevels = false;
 
         MarioLevelGenerator gen = new LevelGeneratorCellAutomata();
+        // MarioLevelGenerator gen = new LevelGeneratorSearch(10, 1);
         String currLevel = getLevel(null, gen);
         MarioGame game = new MarioGame();
         game.buildWorld(currLevel, 1);
@@ -24,8 +26,8 @@ public class Testing {
             // MarioResult result = game.playGame(level, 200, 0);
 
             // ... Or with an AI agent
-            MarioResult result = game.playGame(currLevel, 400, 0);
-            //MarioResult result = game.runGame(agent, currLevel, 20, 0, visuals);
+            //MarioResult result = game.playGame(currLevel, 400, 0);
+            MarioResult result = game.runGame(agent, currLevel, 20, 0, visuals);
 
             // Print the results of the game
             System.out.println(result.getGameStatus().toString());
