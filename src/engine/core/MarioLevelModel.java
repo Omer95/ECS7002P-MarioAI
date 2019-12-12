@@ -111,6 +111,19 @@ public class MarioLevelModel {
                 COIN_HIDDEN_BLOCK, LIFE_HIDDEN_BLOCK};
     }
 
+    // custom bricks & question
+    public static char[] getBricksAndQuestion() {
+        return new char[] {
+                NORMAL_BRICK, COIN_BRICK, LIFE_BRICK, SPECIAL_BRICK,
+                SPECIAL_QUESTION_BLOCK, COIN_QUESTION_BLOCK, PLATFORM
+        };
+    }
+    // custom characters for rule 2
+    public static char[] getEnemyCharacters2() {
+        return new char[]{
+                GOOMBA, RED_KOOPA, GREEN_KOOPA, SPIKY, PIPE
+        };
+    }
     /**
      * Get the correct version of the enemy char
      *
