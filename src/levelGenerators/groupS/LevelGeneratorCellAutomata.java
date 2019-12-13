@@ -21,7 +21,7 @@ public class LevelGeneratorCellAutomata implements MarioLevelGenerator {
     public String getGeneratedLevel(MarioLevelModel model, MarioTimer timer) {
 
         char[] allSprites = MarioLevelModel.getAllTiles();
-        char[] enemyCharacters = MarioLevelModel.getEnemyCharacters2();
+        char[] enemyCharacters = {model.GOOMBA, model.RED_KOOPA, model.GREEN_KOOPA, model.SPIKY, model.PIPE};
 
         // initialize the tiles with random values based on probability except floor
         for (int x=0; x<model.getWidth(); x++) {
@@ -156,7 +156,8 @@ public class LevelGeneratorCellAutomata implements MarioLevelGenerator {
          * rule 5: place question blocks and bricks three blocks above current
          * block if ground based on a probability
          */
-        char[] qAndBrick = MarioLevelModel.getBricksAndQuestion();
+        char[] qAndBrick = {model.NORMAL_BRICK, model.COIN_BRICK, model.LIFE_BRICK, model.SPECIAL_BRICK,
+                model.SPECIAL_QUESTION_BLOCK, model.COIN_QUESTION_BLOCK, model.PLATFORM};
 
         for (int x=0; x<model.getWidth(); x++) {
             for (int y=0; y<model.getHeight(); y++) {
